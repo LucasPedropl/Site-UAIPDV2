@@ -1,9 +1,10 @@
 
+
 export const delivery = {
     heroTitle: "Delivery Inteligente",
     heroSubtitle: "Centralize seus pedidos do iFood, WhatsApp e App Próprio em uma única tela. Mais agilidade e menos erros na sua operação.",
     heroCta: "Começar agora",
-    heroImage: "img/solucao/2.jpg",
+    heroImage: "https://correiodoestado.com.br/mix/wp-content/uploads/2025/12/shutterstock_1016341447.jpg",
     featuresTitle: "Tudo para sua entrega",
     features: [
         { title: "Gestor de Pedidos", desc: "Receba pedidos de múltiplos canais em um único painel.", icon: "📦" },

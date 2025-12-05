@@ -1,3 +1,4 @@
+
 export const mobilidade = {
     heroKicker: "Tecnologia inteligente para suas vendas",
     heroTitle: "Mobilidade em vendas",
@@ -67,9 +68,9 @@ export const mobilidade = {
     highlightImage: "img/mobilidade/image15.png",
     chatbotTitle: "ChatBot oficial WhatsApp Business",
     chatbotText: "Integre atendimento, cobrança e validação em um único fluxo usando a API oficial do WhatsApp Business com todo o suporte da UAI PDV.",
-    chatbotImage: "img/mobilidade/image14.png",
+    chatbotImage: "https://whato.app/br/wp-content/uploads/2025/01/crear-chatbot-whatsapp.jpg",
     indoorTitle: "Mídia indoor que vende",
     indoorText: "Displays inteligentes informam, entretêm e reforçam ofertas no ponto de venda com atualização remota.",
     indoorCta: "Quero implementar",
-    indoorImage: "img/mobilidade/gr4.png"
+    indoorImage: "https://tribetecnologia.com.br/wp-content/uploads/menu-board-digital-conheca-os-diferenciais-que-a-midia-indoor-pode-oferecer-para-o-seu-restaurante.jpg"
 };

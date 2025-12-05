@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 
 const useFadeIn = () => {
@@ -169,29 +170,17 @@ export const Solutions = ({ content }: { content: any }) => {
 							)}
 						</ul>
 					</div>
-					<div className="relative">
+					<div className="relative flex justify-center items-center">
 						<div className="absolute inset-0 bg-brand-blue/5 blur-3xl -z-10 rounded-full"></div>
-						<div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-100 relative">
-							<img
-								className="w-full object-cover"
-								src={content.deliveryPrimaryImage}
-								alt="App Delivery"
-								onError={(e) => {
-									e.currentTarget.src =
-										'https://placehold.co/600x400?text=Delivery+App';
-									e.currentTarget.onerror = null;
-								}}
-							/>
-						</div>
-						{/* Secondary Image Overlay */}
-						<div className="absolute -bottom-12 -left-8 w-48 sm:w-64 rounded-2xl border-4 border-white shadow-xl bg-white hidden sm:block">
+						{/* Primary large image removed. Secondary image promoted to be the main image. */}
+						<div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-100 relative max-w-md w-full">
 							<img
 								className="w-full object-cover rounded-xl"
 								src={content.deliverySecondaryImage}
 								alt="Menu Digital"
 								onError={(e) => {
 									e.currentTarget.src =
-										'https://placehold.co/300x400?text=Menu';
+										'https://placehold.co/600x800?text=Menu';
 									e.currentTarget.onerror = null;
 								}}
 							/>

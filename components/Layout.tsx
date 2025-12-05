@@ -60,15 +60,15 @@ export const Layout: React.FC<LayoutProps> = ({ children, onNavigate, currentPag
   ];
 
   const partners = [
-    { name: 'Stone', src: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Stone_Pagamentos_logo.svg', color: 'text-green-600' },
-    { name: 'Bin', src: 'https://seeklogo.com/images/B/bin-logo-42E00F8321-seeklogo.com.png', color: 'text-red-600' },
-    { name: 'Vero', src: 'https://seeklogo.com/images/V/vero-logo-3058055620-seeklogo.com.png', color: 'text-blue-600' },
-    { name: 'PagBank', src: 'https://upload.wikimedia.org/wikipedia/commons/6/66/PagBank_logo.svg', color: 'text-green-500' },
-    { name: 'Rede', src: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Rede_logo.svg', color: 'text-orange-500' },
-    { name: 'Getnet', src: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Getnet_logo.svg', color: 'text-red-500' },
-    { name: 'Sicredi', src: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Sicredi-logo.svg', color: 'text-green-700' },
-    { name: 'Caixa', src: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Caixa_Econ%C3%B4mica_Federal_logo.svg', color: 'text-blue-700' },
-    { name: 'Cielo', src: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Cielo_logo.svg', color: 'text-blue-500' },
+    { name: 'Stone', src: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Stone_Pagamentos_logo.svg', color: 'text-gray-500', url: 'https://www.stone.com.br/' },
+    { name: 'Bin', src: 'https://seeklogo.com/images/B/bin-logo-42E00F8321-seeklogo.com.png', color: 'text-gray-500', url: 'https://www.bin.com.br/' },
+    { name: 'Vero', src: 'https://seeklogo.com/images/V/vero-logo-3058055620-seeklogo.com.png', color: 'text-gray-500', url: 'https://www.vero.com.br/' },
+    { name: 'PagBank', src: 'https://upload.wikimedia.org/wikipedia/commons/6/66/PagBank_logo.svg', color: 'text-gray-500', url: 'https://pagseguro.uol.com.br/' },
+    { name: 'Rede', src: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Rede_logo.svg', color: 'text-gray-500', url: 'https://www.userede.com.br/' },
+    { name: 'Getnet', src: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Getnet_logo.svg', color: 'text-gray-500', url: 'https://site.getnet.com.br/' },
+    { name: 'Sicredi', src: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Sicredi-logo.svg', color: 'text-gray-500', url: 'https://www.sicredi.com.br/' },
+    { name: 'Caixa', src: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Caixa_Econ%C3%B4mica_Federal_logo.svg', color: 'text-gray-500', url: 'https://www.caixa.gov.br/' },
+    { name: 'Cielo', src: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Cielo_logo.svg', color: 'text-gray-500', url: 'https://www.cielo.com.br/' },
   ];
 
   const isSegmentActive = currentPage.startsWith('segmento-');
@@ -279,7 +279,9 @@ export const Layout: React.FC<LayoutProps> = ({ children, onNavigate, currentPag
                 </p>
                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
                     {partners.map((partner) => (
-                        <PartnerLogo key={partner.name} {...partner} />
+                        <a key={partner.name} href={partner.url} target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-105">
+                            <PartnerLogo {...partner} />
+                        </a>
                     ))}
                 </div>
             </div>
