@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 
 const useFadeIn = () => {
@@ -200,18 +201,9 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                             <img
                                 src={content.management.image1}
                                 alt="Caixa integrado ao POS"
-                                className="rounded-3xl border border-white shadow-lg"
+                                className="rounded-3xl border border-white shadow-lg w-full object-cover"
                                 onError={(e) => {
                                     e.currentTarget.src = 'https://placehold.co/600x400?text=Gest%C3%A3o+1';
-                                    e.currentTarget.onerror = null;
-                                }}
-                            />
-                            <img
-                                src={content.management.image2}
-                                alt="Integração com diversos dispositivos"
-                                className="rounded-3xl border border-white shadow-lg"
-                                onError={(e) => {
-                                    e.currentTarget.src = 'https://placehold.co/600x400?text=Gest%C3%A3o+2';
                                     e.currentTarget.onerror = null;
                                 }}
                             />
@@ -350,7 +342,7 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="relative h-[380px] sm:h-[440px] lg:h-[500px] mx-auto max-w-xl lg:max-w-2xl w-full">
+                        <div className="relative h-[280px] sm:h-[340px] lg:h-[400px] mx-auto max-w-lg lg:max-w-xl w-full">
                             <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
                             {digitalImages.map((img: string, idx: number) => {
                                 const isActive = idx === currentImageIndex;

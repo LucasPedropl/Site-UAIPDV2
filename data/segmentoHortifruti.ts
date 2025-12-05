@@ -1,4 +1,5 @@
 
+
 export const segmentoHortifruti = {
     hero: {
         kicker: "Segmentos atendidos",
@@ -116,7 +117,7 @@ export const segmentoHortifruti = {
     cloud: {
         kicker: "Nuvem",
         title: "Gestão completa em nuvem",
-        description: "Segurança e mobilidade para acompanhar vendas e produção pelo celular, tablet ou computador. Acompanhe relatórios de faturamento, controle de estoque e fluxo de caixa em tempo real, com backup automático e acesso de onde estiver.",
+        description: "Segurança e mobilidade para acompanhar vendas e produção pelo celular, tablet ou computador. Acompanhe relatórios de faturamento, controle de estoque, fluxo de caixa em tempo real, DRE gerencial, curvas ABC de produtos e muito mais, tudo com backup automático e acesso seguro de onde estiver.",
         image: "https://microuniverso.com.br/wp-content/uploads/2019/01/268500-sistema-em-nuvem-o-que-e-e-quais-as-vantagens-1.jpg"
     },
     contact: {
