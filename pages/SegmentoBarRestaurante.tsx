@@ -342,8 +342,8 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="relative h-[280px] sm:h-[340px] lg:h-[400px] mx-auto max-w-lg lg:max-w-xl w-full">
-                            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
+                        <div className="relative h-[240px] sm:h-[300px] lg:h-[340px] mx-auto max-w-md lg:max-w-lg w-full">
+                            <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
                             {digitalImages.map((img: string, idx: number) => {
                                 const isActive = idx === currentImageIndex;
                                 const isPrev = idx === (currentImageIndex - 1 + digitalImages.length) % digitalImages.length;
@@ -375,7 +375,7 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                         key={idx}
                                         src={img}
                                         alt={`Vendas digitais ${idx + 1}`}
-                                        className="absolute inset-6 sm:inset-8 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] object-contain rounded-[28px] shadow-2xl transition-all duration-700 ease-in-out bg-white"
+                                        className="absolute inset-4 sm:inset-6 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] h-[calc(100%-2rem)] sm:h-[calc(100%-3rem)] object-contain rounded-[20px] shadow-xl transition-all duration-700 ease-in-out bg-white"
                                         style={{
                                             zIndex,
                                             transform: `translateX(${translateX}) scale(${scale})`,
