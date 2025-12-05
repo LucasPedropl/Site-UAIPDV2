@@ -1,3 +1,4 @@
+
 export const segmentoHortifruti = {
     hero: {
         kicker: "Segmentos atendidos",
@@ -5,7 +6,7 @@ export const segmentoHortifruti = {
         subtitle: "Solução completa para balanças, etiquetagem nutricional, PDV híbrido e gestão financeira com mobilidade, ideal para hortifrúti, padarias e minimercados.",
         ctaPrimary: "Falar com um especialista",
         ctaSecondary: "Ver todos os segmentos",
-        bgImage: "img/segmentos/hortifruti/hero-bg.jpg",
+        bgImage: "https://www.linearsistemas.com/wp-content/uploads/2022/03/hortifruti.jpg",
         deviceImage: "img/segmentos/hortifruti/hero-device.png",
         stats: [
             { label: "Dia para startar", value: "1" },
@@ -62,9 +63,9 @@ export const segmentoHortifruti = {
                 link: "https://www.youtube.com/watch?v=-KHVql3nuhQ"
             },
             {
-                title: "PDV mobilidade no FLV",
+                title: "PDV mobilidade",
                 desc: "Mostramos como o Mini PDV funciona como caixa volante com pagamento integrado.",
-                img: "img/segmentos/hortifruti/hero-device.png",
+                img: "https://elgin.vtexassets.com/arquivos/ids/158917-1200-1200?v=638839657535000000&width=1200&height=1200&aspect=true",
                 cta: "Solicitar demonstração",
                 link: "https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
             }
@@ -115,8 +116,8 @@ export const segmentoHortifruti = {
     cloud: {
         kicker: "Nuvem",
         title: "Gestão completa em nuvem",
-        description: "Segurança e mobilidade para acompanhar vendas e produção pelo celular, tablet ou computador.",
-        image: "img/segmentos/hortifruti/gestao-nuvem.png"
+        description: "Segurança e mobilidade para acompanhar vendas e produção pelo celular, tablet ou computador. Acompanhe relatórios de faturamento, controle de estoque e fluxo de caixa em tempo real, com backup automático e acesso de onde estiver.",
+        image: "https://microuniverso.com.br/wp-content/uploads/2019/01/268500-sistema-em-nuvem-o-que-e-e-quais-as-vantagens-1.jpg"
     },
     contact: {
         title: "Vamos acelerar o seu hortifruti",

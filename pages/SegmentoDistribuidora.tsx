@@ -106,9 +106,7 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 	const posImages = (content.equipment.pos.cards || [])
 		.filter((c: any) => c.type === 'image')
 		.map((c: any) => resolveAssetPath(c.img));
-	const posTextCards = (content.equipment.pos.cards || []).filter(
-		(c: any) => c.type === 'text'
-	);
+	// Removed logic for posTextCards as user requested to remove them
 	const [posImageIndex, setPosImageIndex] = useState(0);
 
 	useEffect(() => {
@@ -436,7 +434,8 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 						</div>
 					</div>
 
-					<div className="grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
+					{/* Layout Change: Changed from [1fr_1fr] to 2 columns for better responsiveness and sizing */}
+					<div className="grid gap-10 lg:grid-cols-2 items-start">
 						<div className="rounded-3xl bg-white shadow-xl border border-blue-100/80 p-8 lg:sticky lg:top-24">
 							<p className="text-sm font-semibold text-brand-blue">
 								Kit pronto para uso
@@ -501,7 +500,8 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 								))}
 							</div>
 						</div>
-						<div className="relative h-[360px] sm:h-[420px] lg:h-[460px] mx-auto w-full max-w-[600px] flex items-center justify-center">
+						{/* Layout Change: Reduced max-w and ensured w-full to prevent overlapping with the text column */}
+						<div className="relative h-[360px] sm:h-[420px] lg:h-[460px] mx-auto w-full max-w-full lg:max-w-[500px] flex items-center justify-center">
 							<div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
 							{pcImages.map((img: string, idx: number) => {
 								const isActive = idx === pcImageIndex;
@@ -599,7 +599,8 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 						</div>
 					</div>
 
-					<div className="grid gap-10 lg:grid-cols-[1fr_1fr] items-start">
+					{/* Layout Change: Changed from [1fr_1fr] to 2 columns for better responsiveness and sizing */}
+					<div className="grid gap-10 lg:grid-cols-2 items-start">
 						<div className="rounded-3xl bg-white shadow-xl border border-blue-100/80 p-8 lg:sticky lg:top-24">
 							<p className="text-sm font-semibold text-brand-blue">
 								Mobilidade para cobrar e entregar
@@ -663,7 +664,8 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 							</div>
 						</div>
 						<div className="space-y-6">
-							<div className="relative h-[300px] sm:h-[360px] lg:h-[420px] mx-auto w-full max-w-[520px] flex items-center justify-center">
+							{/* Layout Change: Reduced max-w and ensured w-full to prevent overlapping with the text column */}
+							<div className="relative h-[300px] sm:h-[360px] lg:h-[420px] mx-auto w-full max-w-full lg:max-w-[480px] flex items-center justify-center">
 								<div className="absolute inset-0 rounded-[24px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
 								{posImages.map((img: string, idx: number) => {
 									const isActive = idx === posImageIndex;
@@ -732,31 +734,8 @@ export const SegmentoDistribuidora = ({ content }: { content: any }) => {
 									))}
 								</div>
 							</div>
-
-							{posTextCards.length > 0 && (
-								<div className="grid gap-4 sm:grid-cols-2">
-									{posTextCards.map(
-										(card: any, idx: number) => (
-											<FadeSection
-												key={idx}
-												delay={idx * 60}
-											>
-												<div className="rounded-2xl bg-gradient-to-r from-brand-blue to-blue-600 text-white p-5 shadow-lg h-full">
-													<div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide">
-														Pagamento
-													</div>
-													<h3 className="mt-3 text-lg font-bold">
-														{card.title}
-													</h3>
-													<p className="mt-1 text-white/90 leading-relaxed">
-														{card.desc}
-													</p>
-												</div>
-											</FadeSection>
-										)
-									)}
-								</div>
-							)}
+							
+							{/* REMOVED: posTextCards logic to avoid empty cards at the bottom */}
 						</div>
 					</div>
 				</div>

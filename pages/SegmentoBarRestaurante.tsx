@@ -68,18 +68,11 @@ const icons: Record<string, React.ReactNode> = {
 };
 
 export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
-    const resolveAssetPath = (path: string) => {
-        if (!path) return '';
-        if (path.startsWith('http')) return path;
-        const cleaned = path.replace(/^\/+/, '');
-        const meta = import.meta as any;
-        const base = (meta && meta.env && meta.env.BASE_URL) ? meta.env.BASE_URL : '/';
-        return `${base}${cleaned}`;
-    };
-
-    const digitalImages = (content.digital?.images || [])
-        .map((img: string) => resolveAssetPath(img))
-        .filter(Boolean);
+    // Determine images to show. If content is missing, provide placeholders to ensure carousel renders.
+    const rawImages = content.digital?.images;
+    const digitalImages = (rawImages && rawImages.length > 0) 
+        ? rawImages 
+        : ['placeholder-1', 'placeholder-2', 'placeholder-3'];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -357,7 +350,7 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="relative h-[380px] sm:h-[440px] lg:h-[500px] mx-auto max-w-xl lg:max-w-2xl">
+                        <div className="relative h-[380px] sm:h-[440px] lg:h-[500px] mx-auto max-w-xl lg:max-w-2xl w-full">
                             <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
                             {digitalImages.map((img: string, idx: number) => {
                                 const isActive = idx === currentImageIndex;
@@ -388,9 +381,9 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                 return (
                                     <img
                                         key={idx}
-                                        src={img || 'https://placehold.co/480x720?text=Delivery'}
+                                        src={img}
                                         alt={`Vendas digitais ${idx + 1}`}
-                                        className="absolute inset-6 sm:inset-8 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] object-contain rounded-[28px] shadow-2xl transition-all duration-700 ease-in-out"
+                                        className="absolute inset-6 sm:inset-8 w-[calc(100%-3rem)] sm:w-[calc(100%-4rem)] h-[calc(100%-3rem)] sm:h-[calc(100%-4rem)] object-contain rounded-[28px] shadow-2xl transition-all duration-700 ease-in-out bg-white"
                                         style={{
                                             zIndex,
                                             transform: `translateX(${translateX}) scale(${scale})`,
