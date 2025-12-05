@@ -342,7 +342,8 @@ export const SegmentoBarRestaurante = ({ content }: { content: any }) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="relative h-[240px] sm:h-[300px] lg:h-[340px] mx-auto max-w-md lg:max-w-lg w-full">
+                        {/* Changed max-w from max-w-md lg:max-w-lg to max-w-xs sm:max-w-sm to reduce container width */}
+                        <div className="relative h-[220px] sm:h-[280px] lg:h-[320px] mx-auto max-w-[280px] sm:max-w-sm w-full">
                             <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-2xl border border-blue-100/60"></div>
                             {digitalImages.map((img: string, idx: number) => {
                                 const isActive = idx === currentImageIndex;

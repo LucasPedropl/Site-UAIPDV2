@@ -1,3 +1,4 @@
+
 export const segmentoDistribuidora = {
     hero: {
         kicker: "Sistema para DISTRIBUIDORA",
@@ -33,7 +34,7 @@ export const segmentoDistribuidora = {
     },
     pricing: {
         kicker: "Controle de Vendas e Estoque",
-        title: "Solução por R$ 179,90",
+        title: "Solução a partir de 129,90",
         description: "Nosso sistema é projetado para controlar eficientemente as vendas de bebidas, água, gás e itens de mercadinho. Oferecemos controle de estoque, faturamento, aplicativo de vendas, IFOOD, fiscal e gestão de clientes mensalistas."
     },
     features: [
@@ -63,17 +64,17 @@ export const segmentoDistribuidora = {
         {
             title: "Botijão de Gás",
             description: "Com aplicativo de Entrega rápida",
-            image: "img/segmentos/distribuidora/segmento-gas.webp"
+            image: "https://basilioeletro.com.br/wp-content/uploads/2025/10/15374642075-bot-p13.jpg"
         },
         {
             title: "Cerveja",
             description: "Com aplicativo de Entrega rápida",
-            image: "img/segmentos/distribuidora/segmento-cerveja.jpg"
+            image: "https://guiadacervejabr.com/wp-content/uploads/2022/02/beers-g6c193c9ff_1280-e1645561241110.jpg"
         },
         {
             title: "Água",
             description: "Com aplicativo de Entrega rápida",
-            image: "img/segmentos/distribuidora/segmento-agua.jpg"
+            image: "https://espinheiros.com.br/wp-content/uploads/2024/03/Galao-de-agua-com-certificacao-1024x632-1.jpg"
         }
     ],
     ctaBand: {
