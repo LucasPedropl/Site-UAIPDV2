@@ -1,5 +1,82 @@
-
 import React, { useEffect, useRef, useState } from 'react';
+
+const StoreIconWindows = () => (
+	<svg
+		viewBox="0 0 16 16"
+		className="h-5 w-5 text-[#9ec2ff]"
+		fill="currentColor"
+		aria-hidden
+	>
+		<path d="M6.555 1.375 0 2.237v5.45h6.555zM0 13.795l6.555.933V8.313H0zm7.278-5.4.026 6.378L16 16V8.395zM16 0 7.33 1.244v6.414H16z" />
+	</svg>
+);
+
+const StoreIconAndroid = () => (
+	<svg
+		viewBox="0 0 16 16"
+		className="h-5 w-5 text-[#6ee7b7]"
+		fill="currentColor"
+		aria-hidden
+	>
+		<path d="m10.213 1.471.691-1.26q.069-.124-.048-.192-.128-.057-.195.058l-.7 1.27A4.8 4.8 0 0 0 8.005.941q-1.032 0-1.956.404l-.7-1.27Q5.281-.037 5.154.02q-.117.069-.049.193l.691 1.259a4.25 4.25 0 0 0-1.673 1.476A3.7 3.7 0 0 0 3.5 5.02h9q0-1.125-.623-2.072a4.27 4.27 0 0 0-1.664-1.476ZM6.22 3.303a.37.37 0 0 1-.267.11.35.35 0 0 1-.263-.11.37.37 0 0 1-.107-.264.37.37 0 0 1 .107-.265.35.35 0 0 1 .263-.11q.155 0 .267.11a.36.36 0 0 1 .112.265.36.36 0 0 1-.112.264m4.101 0a.35.35 0 0 1-.262.11.37.37 0 0 1-.268-.11.36.36 0 0 1-.112-.264q0-.154.112-.265a.37.37 0 0 1 .268-.11q.155 0 .262.11a.37.37 0 0 1 .107.265q0 .153-.107.264M3.5 11.77q0 .441.311.75.311.306.76.307h.758l.01 2.182q0 .414.292.703a.96.96 0 0 0 .7.288.97.97 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h1.343v2.182q0 .414.292.703a.97.97 0 0 0 .71.288.97.97 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h.76q.436 0 .749-.308.31-.307.311-.75V5.365h-9zm10.495-6.587a.98.98 0 0 0-.702.278.9.9 0 0 0-.293.685v4.063q0 .406.293.69a.97.97 0 0 0 .702.284q.42 0 .712-.284a.92.92 0 0 0 .293-.69V6.146a.9.9 0 0 0-.293-.685 1 1 0 0 0-.712-.278m-12.702.283a1 1 0 0 1 .712-.283q.41 0 .702.283a.9.9 0 0 1 .293.68v4.063a.93.93 0 0 1-.288.69.97.97 0 0 1-.707.284 1 1 0 0 1-.712-.284.92.92 0 0 1-.293-.69V6.146q0-.396.293-.68" />
+	</svg>
+);
+
+const StoreIconApple = () => (
+	<svg
+		viewBox="0 0 16 16"
+		className="h-5 w-5 text-white"
+		fill="currentColor"
+		aria-hidden
+	>
+		<path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
+	</svg>
+);
+
+const StoreIconPlay = () => (
+	<svg
+		viewBox="0 0 24 24"
+		className="h-5 w-5"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="1.4"
+	>
+		<path
+			d="M4 4.8c0-.7.8-1.2 1.5-.8l13.1 7.2c.7.4.7 1.3 0 1.7L5.5 20c-.7.4-1.5-.1-1.5-.8z"
+			fill="url(#heroPlayGradient)"
+			stroke="none"
+		/>
+		<defs>
+			<linearGradient
+				id="heroPlayGradient"
+				x1="4"
+				x2="20"
+				y1="12"
+				y2="12"
+				gradientUnits="userSpaceOnUse"
+			>
+				<stop stopColor="#34d399" />
+				<stop offset="0.5" stopColor="#60a5fa" />
+				<stop offset="1" stopColor="#a78bfa" />
+			</linearGradient>
+		</defs>
+	</svg>
+);
+
+type StoreBadgeProps = {
+	label: string;
+	icon: React.ReactNode;
+};
+
+const StoreBadge: React.FC<StoreBadgeProps> = ({ label, icon }) => (
+	<div className="relative inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 border border-white/20 backdrop-blur hover:border-brand-blue/60 hover:bg-brand-blue/15 transition shadow-[0_0_0_1px_rgba(255,255,255,0.05)]">
+		<div className="absolute inset-0 rounded-full border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.08)] -z-10"></div>
+		<span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 border border-white/10 text-white">
+			{icon}
+		</span>
+		<span className="text-sm font-semibold text-white">{label}</span>
+	</div>
+);
 
 const useFadeIn = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -45,6 +122,16 @@ const FadeSection: React.FC<{ children: React.ReactNode; delay?: number }> = ({
 };
 
 export const Solutions = ({ content }: { content: any }) => {
+	const resolveIcon = (label: string) => {
+		const key = label.toLowerCase();
+		if (key.includes('window')) return <StoreIconWindows />;
+		if (key.includes('android')) return <StoreIconAndroid />;
+		if (key.includes('play')) return <StoreIconPlay />;
+		if (key.includes('ios') || key.includes('apple'))
+			return <StoreIconApple />;
+		return <StoreIconPlay />;
+	};
+
 	return (
 		<>
 			{/* Hero Section */}
@@ -87,25 +174,11 @@ export const Solutions = ({ content }: { content: any }) => {
 						<div className="mt-8 flex flex-wrap gap-4">
 							{content.heroBadges.map(
 								(badge: any, idx: number) => (
-									<div
+									<StoreBadge
 										key={idx}
-										className="relative inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 border border-white/20 backdrop-blur"
-									>
-										<div className="absolute inset-0 rounded-full border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.1)] -z-10"></div>
-										<img
-											src={badge.image}
-											alt={badge.label}
-											className="h-6 w-6 object-contain"
-											onError={(e) => {
-												e.currentTarget.src =
-													'https://placehold.co/50x50?text=Icon';
-												e.currentTarget.onerror = null;
-											}}
-										/>
-										<span className="text-sm font-semibold">
-											{badge.label}
-										</span>
-									</div>
+										label={badge.label}
+										icon={resolveIcon(badge.label)}
+									/>
 								)
 							)}
 						</div>
