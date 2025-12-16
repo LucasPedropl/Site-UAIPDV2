@@ -84,13 +84,13 @@ export const home = {
 		{
 			id: 3,
 			title: 'EL8600 - Leitor de Código de Barras fixo, 2D',
-			img: '/img/home/Equipamentos Homologados/leitordebarra.png',
+			img: 'img/home/Equipamentos Homologados/leitordebarra.png',
 			desc: 'Excelente performance de leitura para aumentar a agilidade no check-out. O EL8600 não requer o uso de uma fonte externa, basta conectar o cabo ao computador.',
 		},
 		{
 			id: 4,
 			title: 'VERO All in One',
-			img: '/img/home/Equipamentos Homologados/veroallin.png',
+			img: 'img/home/Equipamentos Homologados/veroallin.png',
 			desc: 'Solução completa, compacta e eficiente para frente de caixa. O Vero é um All in One Android compacto perfeito para o pequeno e médio varejo.',
 		},
 	],
