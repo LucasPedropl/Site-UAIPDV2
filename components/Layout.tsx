@@ -72,8 +72,6 @@ export const Layout: React.FC<LayoutProps> = ({
 		{ label: t.navSolutions, id: 'solutions' },
 		{ label: t.navVideos, id: 'videos' },
 		{ label: t.navDelivery, id: 'delivery' },
-		{ label: t.navAutomacao, id: 'automacao' },
-		{ label: t.navUaiMais, id: 'uai-mais' },
 	];
 
 	const partners = [
@@ -245,6 +243,37 @@ export const Layout: React.FC<LayoutProps> = ({
 							</button>
 							<div className="absolute left-0 top-full pt-3 w-60 hidden group-hover:block hover:block">
 								<div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+									<div className="px-4 pb-2 pt-3 border-b border-gray-100">
+										<p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
+											Atalhos
+										</p>
+									</div>
+									<div className="py-2 border-b border-gray-100">
+										<button
+											onClick={() =>
+												handleNavClick('automacao')
+											}
+											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+												currentPage === 'automacao'
+													? 'text-brand-blue font-medium'
+													: 'text-gray-700'
+											}`}
+										>
+											{t.navAutomacao}
+										</button>
+										<button
+											onClick={() =>
+												handleNavClick('uai-mais')
+											}
+											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+												currentPage === 'uai-mais'
+													? 'text-brand-blue font-medium'
+													: 'text-gray-700'
+											}`}
+										>
+											{t.navUaiMais}
+										</button>
+									</div>
 									<div className="px-4 pb-2 pt-3 border-b border-gray-100">
 										<p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
 											Portais
@@ -483,6 +512,26 @@ export const Layout: React.FC<LayoutProps> = ({
 								Acesso
 							</p>
 							<div className="space-y-2">
+								<button
+									onClick={() => handleNavClick('automacao')}
+									className={`block w-full text-left text-sm ${
+										currentPage === 'automacao'
+											? 'text-brand-blue font-medium'
+											: 'text-gray-600 hover:text-brand-blue'
+									}`}
+								>
+									{t.navAutomacao}
+								</button>
+								<button
+									onClick={() => handleNavClick('uai-mais')}
+									className={`block w-full text-left text-sm ${
+										currentPage === 'uai-mais'
+											? 'text-brand-blue font-medium'
+											: 'text-gray-600 hover:text-brand-blue'
+									}`}
+								>
+									{t.navUaiMais}
+								</button>
 								<a
 									href="https://web.invoicy.com.br/login.aspx"
 									className="block text-sm text-gray-600 hover:text-brand-blue"
@@ -494,6 +543,12 @@ export const Layout: React.FC<LayoutProps> = ({
 									className="block text-sm text-gray-600 hover:text-brand-blue"
 								>
 									Web Mail
+								</a>
+								<a
+									href="http://uai.tabletcloud.com.br/"
+									className="block text-sm text-gray-600 hover:text-brand-blue"
+								>
+									Acesso Gerencial
 								</a>
 								<a
 									href="https://uaipdv.com.br/printapp/"
