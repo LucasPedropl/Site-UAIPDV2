@@ -24,3 +24,42 @@ body {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+/* Horizontal category scrollbar: hidden on small screens, styled on desktop */
+.horizontal-scroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Mobile: keep scrollbar hidden for touch experience */
+@media (max-width: 767px) {
+	.horizontal-scroll::-webkit-scrollbar {
+		display: none;
+	}
+	.horizontal-scroll {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+
+/* Desktop: thin rounded scrollbar with brand color thumb */
+@media (min-width: 768px) {
+	.horizontal-scroll {
+		scrollbar-width: thin;
+		scrollbar-color: #3b82f6 rgba(255, 255, 255, 0.06);
+	}
+	.horizontal-scroll::-webkit-scrollbar {
+		height: 8px;
+	}
+	.horizontal-scroll::-webkit-scrollbar-track {
+		background: rgba(255, 255, 255, 0.04);
+		border-radius: 9999px;
+	}
+	.horizontal-scroll::-webkit-scrollbar-thumb {
+		background: #3b82f6;
+		border-radius: 9999px;
+		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+	}
+	.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+		background: #2563eb;
+	}
+}

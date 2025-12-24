@@ -45,10 +45,13 @@ const FadeSection: React.FC<{ children: React.ReactNode; delay?: number }> = ({
 
 export const Videos = ({ content }: { content: any }) => {
 	const [activeCategory, setActiveCategory] = useState('Todos');
-	
-	const filteredVideos = activeCategory === 'Todos' 
-		? content.videos 
-		: content.videos.filter((video: any) => video.category === activeCategory);
+
+	const filteredVideos =
+		activeCategory === 'Todos'
+			? content.videos
+			: content.videos.filter(
+					(video: any) => video.category === activeCategory
+			  );
 
 	return (
 		<>
@@ -200,7 +203,7 @@ export const Videos = ({ content }: { content: any }) => {
 					</div>
 
 					{/* Category Tabs */}
-					<div className="mb-12 overflow-x-auto pb-2">
+					<div className="mb-12 overflow-x-auto pb-2 horizontal-scroll">
 						<div className="flex items-center justify-center gap-2 sm:gap-3 p-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm w-fit mx-auto min-w-min">
 							{content.categories.map((category: string) => (
 								<button
@@ -221,7 +224,10 @@ export const Videos = ({ content }: { content: any }) => {
 					{/* Video Count Indicator */}
 					<div className="mb-8 text-center">
 						<p className="text-white/50 text-sm">
-							{filteredVideos.length} {filteredVideos.length === 1 ? 'vídeo encontrado' : 'vídeos encontrados'}
+							{filteredVideos.length}{' '}
+							{filteredVideos.length === 1
+								? 'vídeo encontrado'
+								: 'vídeos encontrados'}
 						</p>
 					</div>
 
