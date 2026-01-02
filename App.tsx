@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { content } from './data/content';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
@@ -14,7 +14,52 @@ import { Automacao } from './pages/Automacao';
 import { UaiMais } from './pages/UaiMais';
 
 export default function App() {
-	const [currentPage, setCurrentPage] = useState('home');
+	const validPages = [
+		'home',
+		'mobilidade',
+		'solutions',
+		'videos',
+		'delivery',
+		'segmento-bar-restaurante',
+		'segmento-distribuidora',
+		'segmento-hortifruti',
+		'segmento-eventos-festas',
+		'automacao',
+		'uai-mais',
+	];
+
+	const normalizePage = (value?: string) => {
+		const page = (value || '').replace(/^#/, '').toLowerCase();
+		return validPages.includes(page) ? page : 'home';
+	};
+
+	const [currentPage, setCurrentPage] = useState(() =>
+		normalizePage(window.location.hash)
+	);
+
+	useEffect(() => {
+		const syncFromHash = () => {
+			const page = normalizePage(window.location.hash);
+			setCurrentPage(page);
+		};
+
+		// Ensure the URL reflects the initial page so each view has a shareable hash.
+		const initialPage = normalizePage(window.location.hash);
+		if (window.location.hash !== `#${initialPage}`) {
+			window.location.hash = initialPage;
+		}
+
+		window.addEventListener('hashchange', syncFromHash);
+		return () => window.removeEventListener('hashchange', syncFromHash);
+	}, []);
+
+	const handleNavigate = (page: string) => {
+		const targetPage = normalizePage(page);
+		setCurrentPage(targetPage);
+		if (window.location.hash !== `#${targetPage}`) {
+			window.location.hash = targetPage;
+		}
+	};
 
 	const renderPage = () => {
 		switch (currentPage) {
@@ -56,7 +101,7 @@ export default function App() {
 	};
 
 	return (
-		<Layout onNavigate={setCurrentPage} currentPage={currentPage}>
+		<Layout onNavigate={handleNavigate} currentPage={currentPage}>
 			{renderPage()}
 		</Layout>
 	);
