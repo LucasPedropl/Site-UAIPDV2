@@ -210,7 +210,7 @@ export const Layout: React.FC<LayoutProps> = ({
 								key={link.id}
 								onClick={() => handleNavClick(link.id)}
 								className={getNavLinkClass(
-									currentPage === link.id
+									currentPage === link.id,
 								)}
 							>
 								{link.label}
@@ -273,6 +273,22 @@ export const Layout: React.FC<LayoutProps> = ({
 										>
 											{t.navUaiMais}
 										</button>
+										<a
+											href="https://uaipdv.gitbook.io/uaipdv+"
+											target="_blank"
+											rel="noreferrer"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>
+											Manual
+										</a>
+										<a
+											href="https://drive.google.com/drive/folders/1oRdzfAqILUD1IwKbATYaRixQt4u9kTCP?usp=sharing"
+											target="_blank"
+											rel="noreferrer"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+										>
+											Dúvidas UaiPDV+
+										</a>
 									</div>
 									<div className="px-4 pb-2 pt-3 border-b border-gray-100">
 										<p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
@@ -321,7 +337,7 @@ export const Layout: React.FC<LayoutProps> = ({
 						<div className="relative group">
 							<button
 								className={getDropdownTriggerClass(
-									isSegmentActive
+									isSegmentActive,
 								)}
 							>
 								{t.navSegments}
@@ -350,7 +366,7 @@ export const Layout: React.FC<LayoutProps> = ({
 										<button
 											onClick={() =>
 												handleNavClick(
-													'segmento-bar-restaurante'
+													'segmento-bar-restaurante',
 												)
 											}
 											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
@@ -365,7 +381,7 @@ export const Layout: React.FC<LayoutProps> = ({
 										<button
 											onClick={() =>
 												handleNavClick(
-													'segmento-distribuidora'
+													'segmento-distribuidora',
 												)
 											}
 											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
@@ -380,7 +396,7 @@ export const Layout: React.FC<LayoutProps> = ({
 										<button
 											onClick={() =>
 												handleNavClick(
-													'segmento-hortifruti'
+													'segmento-hortifruti',
 												)
 											}
 											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
@@ -395,7 +411,7 @@ export const Layout: React.FC<LayoutProps> = ({
 										<button
 											onClick={() =>
 												handleNavClick(
-													'segmento-eventos-festas'
+													'segmento-eventos-festas',
 												)
 											}
 											className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
@@ -533,6 +549,22 @@ export const Layout: React.FC<LayoutProps> = ({
 									{t.navUaiMais}
 								</button>
 								<a
+									href="https://uaipdv.gitbook.io/uaipdv+"
+									target="_blank"
+									rel="noreferrer"
+									className="block text-sm text-gray-600 hover:text-brand-blue"
+								>
+									Manual
+								</a>
+								<a
+									href="https://drive.google.com/drive/folders/1oRdzfAqILUD1IwKbATYaRixQt4u9kTCP?usp=sharing"
+									target="_blank"
+									rel="noreferrer"
+									className="block text-sm text-gray-600 hover:text-brand-blue"
+								>
+									Dúvidas UaiPDV+
+								</a>
+								<a
 									href="https://web.invoicy.com.br/login.aspx"
 									className="block text-sm text-gray-600 hover:text-brand-blue"
 								>
@@ -566,7 +598,7 @@ export const Layout: React.FC<LayoutProps> = ({
 								<button
 									onClick={() =>
 										handleNavClick(
-											'segmento-bar-restaurante'
+											'segmento-bar-restaurante',
 										)
 									}
 									className={`block w-full text-left text-sm ${
@@ -605,7 +637,7 @@ export const Layout: React.FC<LayoutProps> = ({
 								<button
 									onClick={() =>
 										handleNavClick(
-											'segmento-eventos-festas'
+											'segmento-eventos-festas',
 										)
 									}
 									className={`block w-full text-left text-sm ${

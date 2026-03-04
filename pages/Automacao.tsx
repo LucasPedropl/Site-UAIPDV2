@@ -72,21 +72,34 @@ export const Automacao: React.FC = () => {
 		{
 			title: 'Versão Oficial (Android)',
 			description: 'Aplicativo principal homologado para produção.',
-			href: 'https://app.tabletcloud.com.br/android/oficial/app.apk',
+			href: 'https://pdvlegal.tec.br/android/oficial/app.apk',
 			tone: 'blue' as const,
 		},
 		{
 			title: 'Versão Beta (Android)',
 			description:
 				'Canal de testes para novidades e correções antecipadas.',
-			href: 'https://app.tabletcloud.com.br/android/beta/app.apk',
+			href: 'https://pdvlegal.tec.br/android/beta/app.apk',
 			tone: 'amber' as const,
 		},
 		{
 			title: 'Validador de Tickets',
 			description:
 				'Ferramenta de validação para controle de acesso e eventos.',
-			href: 'https://app.tabletcloud.com.br/android/oficial/validador.apk',
+			href: 'https://pdvlegal.tec.br/android/oficial/validador.apk',
+			tone: 'green' as const,
+		},
+		{
+			title: 'Totem autoatendimento Versão:73',
+			description:
+				'Totem de autoatendimento — build aa-v73 para implantação rápida.',
+			href: 'https://pdvlegal.tec.br/android/autoAtendimento/totem/aa-v73.apk',
+			tone: 'blue' as const,
+		},
+		{
+			title: 'M-sitef',
+			description: 'Módulo de integração M-Sitef para pagamentos móveis.',
+			href: 'https://pdvlegal.tec.br/android/msitef/msitef.apk',
 			tone: 'green' as const,
 		},
 	];
@@ -123,16 +136,59 @@ export const Automacao: React.FC = () => {
 					</p>
 				</div>
 
-				<div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-					{downloads.map((item) => (
-						<DownloadCard
-							key={item.title}
-							title={item.title}
-							description={item.description}
-							href={item.href}
-							tone={item.tone}
-						/>
-					))}
+				<div className="mt-12">
+					{/* Primeira linha: até 3 cards */}
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+						{downloads.slice(0, 3).map((item) => (
+							<div key={item.title} className="w-full">
+								<DownloadCard
+									title={item.title}
+									description={item.description}
+									href={item.href}
+									tone={item.tone}
+								/>
+							</div>
+						))}
+					</div>
+
+					{/* Segunda linha: centraliza quando houver 1 ou 2 itens, caso contrário usa grid de 3 */}
+					{(() => {
+						const rest = downloads.slice(3);
+						if (rest.length === 0) return null;
+						if (rest.length === 3) {
+							return (
+								<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+									{rest.map((item) => (
+										<DownloadCard
+											key={item.title}
+											title={item.title}
+											description={item.description}
+											href={item.href}
+											tone={item.tone}
+										/>
+									))}
+								</div>
+							);
+						}
+						// 1 ou 2 itens -> centralizar como grupo
+						return (
+							<div className="mt-6 flex flex-col items-center gap-6 md:flex-row md:justify-center">
+								{rest.map((item) => (
+									<div
+										key={item.title}
+										className="w-full md:w-1/3"
+									>
+										<DownloadCard
+											title={item.title}
+											description={item.description}
+											href={item.href}
+											tone={item.tone}
+										/>
+									</div>
+								))}
+							</div>
+						);
+					})()}
 				</div>
 
 				<div className="mt-14 rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-6 text-sm text-white/70 max-w-4xl mx-auto">

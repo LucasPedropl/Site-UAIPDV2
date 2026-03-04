@@ -43,6 +43,7 @@ export const videos = {
 		'Mobilidade',
 		'Equipamentos',
 		'PDV Móvel',
+		'Hortifruti',
 	],
 	videos: [
 		{
@@ -356,6 +357,12 @@ export const videos = {
 			desc: 'Emissão de fichas com integração a meios de pagamento.',
 			youtube: 'NG-SHUJJIZ4',
 			category: 'PDV Geral',
+		},
+		{
+			title: 'Hortifruti - Solução de vendas com balança integrada',
+			desc: 'Demonstração da solução de vendas com balança integrada para hortifruti.',
+			youtube: '_lcnMdo4XHU',
+			category: 'Hortifruti',
 		},
 	],
 };
