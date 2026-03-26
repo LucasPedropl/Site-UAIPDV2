@@ -281,14 +281,6 @@ export const Layout: React.FC<LayoutProps> = ({
 										>
 											Manual
 										</a>
-										<a
-											href="https://drive.google.com/drive/folders/1oRdzfAqILUD1IwKbATYaRixQt4u9kTCP?usp=sharing"
-											target="_blank"
-											rel="noreferrer"
-											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-										>
-											Dúvidas UaiPDV+
-										</a>
 									</div>
 									<div className="px-4 pb-2 pt-3 border-b border-gray-100">
 										<p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
@@ -429,7 +421,9 @@ export const Layout: React.FC<LayoutProps> = ({
 						</div>
 
 						<a
-							href="#"
+							href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+							target="_blank"
+							rel="noreferrer"
 							className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-brand-blue hover:bg-brand-blue-dark transition-colors whitespace-nowrap"
 						>
 							{t.navCta}
@@ -555,14 +549,6 @@ export const Layout: React.FC<LayoutProps> = ({
 									className="block text-sm text-gray-600 hover:text-brand-blue"
 								>
 									Manual
-								</a>
-								<a
-									href="https://drive.google.com/drive/folders/1oRdzfAqILUD1IwKbATYaRixQt4u9kTCP?usp=sharing"
-									target="_blank"
-									rel="noreferrer"
-									className="block text-sm text-gray-600 hover:text-brand-blue"
-								>
-									Dúvidas UaiPDV+
 								</a>
 								<a
 									href="https://web.invoicy.com.br/login.aspx"

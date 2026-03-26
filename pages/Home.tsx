@@ -146,13 +146,15 @@ export const Home = ({ content }: { content: any }) => {
 						</p>
 						<div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
 							<a
-								href="#"
+								href="https://api.whatsapp.com/send?l=pt_BR&phone=553193585185"
+								target="_blank"
+								rel="noreferrer"
 								className="inline-flex items-center justify-center rounded-full px-8 py-3.5 bg-brand-blue text-white font-bold hover:bg-brand-blue-dark transition-all transform hover:scale-105 shadow-lg shadow-brand-blue/30"
 							>
 								{content.heroCtaPrimary}
 							</a>
 							<a
-								href="#"
+								href="#solutions"
 								className="inline-flex items-center justify-center rounded-full px-8 py-3.5 border border-white/60 text-white font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
 							>
 								{content.heroCtaSecondary}
